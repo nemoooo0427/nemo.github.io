@@ -36,7 +36,6 @@
         }
         .content {
             margin-top: 40px;
-            display: block; /* Always show the content */
             padding: 30px;
             background-color: #ffffff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -66,8 +65,12 @@
         button:hover {
             background-color: #d55f45;
         }
-        img {
+        .image-container {
             margin-top: 40px;
+            display: none; /* Initially hidden */
+            text-align: center;
+        }
+        .image-container img {
             max-width: 80%;
             border-radius: 10px;
             border: 5px solid #e76f51;
@@ -109,11 +112,11 @@
         </ul>
     </div>
 
-    <!-- 按钮，独立显示 -->
-    <button onclick="alert('感谢访问！')">点击这里以了解更多</button>
+    <!-- 按钮，点击后显示图片 -->
+    <button onclick="showImage()">点击查看画蛇添足的文生图</button>
 
-    <!-- 显示生成的图片 -->
-    <div>
+    <!-- 图片容器，初始隐藏 -->
+    <div class="image-container" id="imageContainer">
         <img src="snake.jpg" alt="画蛇添足生成图" />
     </div>
 
@@ -121,6 +124,14 @@
     <footer>
         此页面展示了“画蛇添足”这一成语的解释、文本描述及相关图像。
     </footer>
+
+    <!-- JavaScript部分 -->
+    <script>
+        function showImage() {
+            // 显示图片容器
+            document.getElementById("imageContainer").style.display = "block";
+        }
+    </script>
 
 </body>
 </html>
